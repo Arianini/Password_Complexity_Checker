@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link
+  href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+  rel="stylesheet"
+  />
+  <meta charset="UTF-8">
+  <title>Password Strength Checker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>Password Strength Checker</h1>
+
+    <label for="pwd">Enter Password</label>
+    <input id="pwd" type="password" placeholder="Your password…">
+
+    <div class="toggle">
+      <input id="show" type="checkbox">
+      <label for="show">Show password</label>
+    </div>
+
+    <div class="buttons">
+      <button id="analyze">Analyze</button>
+      <button id="clear">Clear</button>
+    </div>
+
+    <div class="strength">
+      <div class="label" id="rating">Enter a password and click Analyze</div>
+      <progress id="bar" value="0" max="100"></progress>
+    </div>
+
+    <div class="feedback" id="feedback"></div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

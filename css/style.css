@@ -1,0 +1,199 @@
+/* ─── Variables ───────────────────────────────────────────────────── */
+:root {
+  --page-bg:   #f4f6f8;
+  --card-bg:   #ffffff;
+  --text:      #333333;
+  --accent:    #6200ea; /* deep purple */
+  --accent-dark: #3700b3;
+  --input-bg:  #fafafa;
+  --border:    #d1d5db;
+  --shadow:    rgba(0, 0, 0, 0.1);
+}
+
+/* ─── Base ────────────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 2rem;
+  background: var(--page-bg);
+  font-family: 'Poppins', sans-serif;
+  color: var(--text);
+  line-height: 1.5;
+}
+h1 {
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+/* ─── Card Container ─────────────────────────────────────────────── */
+.container {
+  max-width: 480px;
+  margin: auto;
+  background: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px var(--shadow);
+  padding: 2rem;
+}
+
+/* ─── Form Elements ──────────────────────────────────────────────── */
+label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: 500;
+}
+input[type="password"],
+input[type="text"] {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--input-bg);
+  color: var(--text);
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+input[type="password"]:focus,
+input[type="text"]:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(98, 0, 234, 0.15);
+}
+
+/* ─── Toggle Checkbox ───────────────────────────────────────────── */
+.toggle input[type="checkbox"] {
+  /* remove the native look */
+  -webkit-appearance: none;
+  appearance: none;
+
+  /* size & spacing */
+  width: 18px;
+  height: 18px;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+  cursor: pointer;
+
+  /* unchecked style */
+  border: 2px solid var(--accent);
+  border-radius: 4px;
+  background: var(--input-bg);
+  transition: background 0.2s, border-color 0.2s;
+}
+
+/* hover & focus */
+.toggle input[type="checkbox"]:hover,
+.toggle input[type="checkbox"]:focus {
+  border-color: var(--accent-dark);
+}
+
+/* checked state */
+.toggle input[type="checkbox"]:checked {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+/* custom checkmark */
+.toggle input[type="checkbox"]:checked::after {
+  content: '✔';
+  display: block;
+  color: #fff;
+  font-size: 0.9em;
+  text-align: center;
+  line-height: 18px;
+}
+
+/* Add at the bottom of your style.css */
+
+.toggle {
+  display: inline-flex;       /* lay out checkbox + label in one row */
+  align-items: center;        /* vertically center them */
+  margin-top: 1rem;           /* space above if needed */
+  gap: 0.5rem;                /* consistent space between box and text */
+}
+
+.toggle label {
+  margin: 0;                  /* remove default margins */
+  font-size: 0.9rem;          /* keep your existing size */
+  user-select: none;          /* clicking the text toggles the box */
+}
+
+/* adjust the checkbox if you want it slightly higher/lower */
+.toggle input[type="checkbox"] {
+  margin: 0;                  /* reset any stray margins */
+  /* if you need to nudge it: */
+  /* transform: translateY(1px); */
+}
+
+
+/* ─── Buttons ────────────────────────────────────────────────────── */
+.buttons {
+  text-align: center;
+  margin: 2rem 0;
+}
+button {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  margin: 0 0.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+button:hover {
+  background: var(--accent-dark);
+}
+button:active {
+  transform: scale(0.97);
+}
+
+/* ─── Strength & Progress ───────────────────────────────────────── */
+.strength .label {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+progress {
+  width: 100%;
+  height: 12px;
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 6px;
+  overflow: hidden;
+}
+progress::-webkit-progress-bar {
+  background: var(--input-bg);
+}
+progress::-webkit-progress-value {
+  background: var(--accent);
+}
+
+/* ─── Feedback Box ──────────────────────────────────────────────── */
+.feedback {
+  margin-top: 1rem;
+  background: var(--input-bg);
+  padding: 1rem;
+  border-radius: 8px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.95rem;
+  min-height: 3.5rem;
+  color: var(--text);
+}
+
+/* ─── Responsive Tweaks ─────────────────────────────────────────── */
+@media (max-width: 520px) {
+  .container {
+    padding: 1rem;
+    margin: 1rem;
+  }
+  button {
+    padding: 0.6rem 1rem;
+    margin: 0.3rem;
+  }
+}
